@@ -2,7 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "HugoModo"
 theme = [
-  "hugomodo"
+  "hugomodo-best-motherfucking-website"
 ]
 pygmentsCodeFences = true
 [Params]
