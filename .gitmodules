@@ -1,0 +1,3 @@
+[submodule "themes/hugomodo"]
+	path = themes/hugomodo
+	url = https://github.com/hugomodo/hugomodo.git
