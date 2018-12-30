@@ -4,3 +4,6 @@
 [submodule "themes/hugomodo-best-motherfucking-website"]
 	path = themes/hugomodo-best-motherfucking-website
 	url = https://github.com/hugomodo/hugomodo-best-motherfucking-website.git
+[submodule "themes/hugomodo-image-processing"]
+	path = themes/hugomodo-image-processing
+	url = https://github.com/hugomodo/hugomodo-image-processing.git

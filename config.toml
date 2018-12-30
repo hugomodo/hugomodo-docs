@@ -1,9 +1,13 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "HugoModo"
+
 theme = [
+  "hugomodo-image-processing",
   "hugomodo-best-motherfucking-website"
 ]
+
 pygmentsCodeFences = true
+
 [Params]
   description = "A modular Hugo framework."
