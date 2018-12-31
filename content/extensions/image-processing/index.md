@@ -34,6 +34,14 @@ description: Adds Hugo's image processing to HugoModo for Page Bundles.
 
 From your Hugo site's root directory:
 
+*Recommended*
+
+``` bash
+git submodule add https://github.com/hugomodo/hugomodo-image-processing.git themes/hugomodo-image-processing
+```
+
+Or:
+
 ``` bash
 cd themes
 git clone https://github.com/hugomodo/hugomodo-image-processing.git
