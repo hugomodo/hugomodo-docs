@@ -12,10 +12,12 @@ description: Adds Hugo's image processing to HugoModo for Page Bundles.
 - Uses `srcset` to load responsive image sizes on different screen resolutions.
 - Can be configured to use Page Bundles, a headless Resources bundle, or both!
 
-#### TODO
+#### Todo
 
 - Equivalents for theme layouts are provided: `image-processing/imgproc.html` and `image-processing/figproc.html`
   1. These already exist. Modification required so that context can be passed.
+- Thinking out loud: Does it make more sense to name this extension 'Responsive Images', given that's what it currently provides?
+  1. 'Image Processing' could be reserved for an extension providing all of Hugo's image processing methods as shortcodes.
 
 ## Installation
 
@@ -48,15 +50,25 @@ uploadsDir = "uploads"
 It is also possible to mix the two approaches by passing a `context` attribute to the provided shortcodes and templates:
 
 ``` go-html-template
-{{</* imgproc context="uploads" src="fabian-grohs-423591-unsplash.jpg" */>}}
+{{</* imgproc context="uploads" src="jakob-owens-212555-unsplash.jpg" */>}}
 ```
+
+{{< imgproc context="uploads" src="jakob-owens-212555-unsplash.jpg" >}}
 
 ## Shortcodes
 
 ### imgproc
 
-{{< imgproc context="extensions/image-processing" src="fabian-grohs-423591-unsplash.jpg" >}}
+``` go-html-template
+{{</* imgproc src="fabian-grohs-423591-unsplash.jpg" */>}}
+```
+
+{{< imgproc src="fabian-grohs-423591-unsplash.jpg" >}}
 
 ### figproc
 
-{{< figproc context="extensions/image-processing" src="fabian-grohs-423591-unsplash.jpg" caption="Computer on a desk" >}}
+``` go-html-template
+{{</* figproc src="fabian-grohs-423591-unsplash.jpg" caption="Computer on a desk" */>}}
+```
+
+{{< figproc src="fabian-grohs-423591-unsplash.jpg" caption="Computer on a desk" >}}
