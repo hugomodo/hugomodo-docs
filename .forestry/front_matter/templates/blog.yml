@@ -14,9 +14,6 @@ fields:
   config:
     date_format: DD/MM/YYYY
     required: true
-- type: textarea
-  name: description
-  label: Description
 - type: image_gallery
   name: images
   label: Images
