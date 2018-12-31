@@ -39,7 +39,7 @@ cd themes
 git clone https://github.com/hugomodo/hugomodo-image-processing.git
 ```
 
-Then add `hugomodo-image-processing` to your site's themes in `config.toml`:
+Then add `hugomodo-image-processing` to your site's themes in `config.toml`. Because it is considered an extension, it should be listed above any other HugoModo themes:
 
 ``` toml
 themes = [
