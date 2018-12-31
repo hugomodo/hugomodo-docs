@@ -2,4 +2,21 @@
 label: Blog
 hide_body: false
 is_partial: false
-fields: []
+fields:
+- type: text
+  name: title
+  label: Title
+  config:
+    required: true
+- type: datetime
+  name: date
+  label: Date
+  config:
+    date_format: DD/MM/YYYY
+    required: true
+- type: textarea
+  name: description
+  label: Description
+- type: image_gallery
+  name: images
+  label: Images
