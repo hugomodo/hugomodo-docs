@@ -14,13 +14,21 @@ description: Adds Hugo's image processing to HugoModo for Page Bundles.
 
 #### Todo
 
-- Equivalents for theme layouts are provided: `image-processing/imgproc.html` and `image-processing/figproc.html`.
-  1. These already exist. Modification required so that context can be passed.
-- Option to override existing `figure` shortcode.
-- Additional `imgcrop` shortcode using `.Fill` image processing function to crop images to given dimensions.
-- Potentially an `imgfit` shortcode as well, using `.Fit`. Could be useful for masonry layouts.
-- Support for featured and thumbnail images in page frontmatter and site config.
-- Support for opengraph and other meta tag images to be resized appropriately.
+1. Equivalents for theme layouts are provided: `image-processing/imgproc.html` and `image-processing/figproc.html`.
+  - These already exist. Modification required so that context can be passed.
+2. Option to override existing `figure` shortcode.
+3. Additional `imgcrop` shortcode using `.Fill` image processing function to crop images to given dimensions.
+4. Potentially an `imgfit` shortcode as well, using `.Fit`. Could be useful for masonry layouts.
+5. Support for featured and thumbnail images in page frontmatter and site config.
+6. Support for opengraph and other meta tag images to be resized appropriately.
+7. Support for `sizes` attribute alongside `srcset`; allow this to be altered in config.
+8. Consider having minSize and maxSize settings in config and per proc.
+  - Allowing these to be set where used will help to reduce repo bloat.
+9. Add support for social and search graph image resizing.
+  - opengraph
+  - schema
+  - twitter cards
+  - structured data
 
 ## Installation
 
