@@ -14,12 +14,31 @@ description: Adds Hugo's image processing to HugoModo for Page Bundles.
 
 #### Todo
 
-- Equivalents for theme layouts are provided: `image-processing/imgproc.html` and `image-processing/figproc.html`
+- Equivalents for theme layouts are provided: `image-processing/imgproc.html` and `image-processing/figproc.html`.
   1. These already exist. Modification required so that context can be passed.
-- Thinking out loud: Does it make more sense to name this extension 'Responsive Images', given that's what it currently provides?
-  1. 'Image Processing' could be reserved for an extension providing all of Hugo's image processing methods as shortcodes.
+- Option to override existing `figure` shortcode.
+- Additional `imgcrop` shortcode using `.Fill` image processing function to crop images to given dimensions.
+- Potentially an `imgfit` shortcode as well, using `.Fit`. Could be useful for masonry layouts.
+- Support for featured and thumbnail images in page frontmatter and site config.
+- Support for opengraph and other meta tag images to be resized appropriately.
 
 ## Installation
+
+From your Hugo site's root directory:
+
+``` bash
+cd themes
+git clone https://github.com/hugomodo/hugomodo-image-processing.git
+```
+
+Then add `hugomodo-image-processing` to your site's themes in `config.toml`:
+
+``` toml
+themes = [
+  "hugomodo-image-processing",
+  ...
+]
+```
 
 ## Configuration
 
