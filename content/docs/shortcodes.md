@@ -75,7 +75,7 @@ All of these standard [Hugo shortcodes](https://gohugo.io/content-management/sho
 
 {{< instagram BWNjjyYFxVx >}}
 
-## param
+### param
 
 *Requires Hugo version 0.52 or higher*
 
