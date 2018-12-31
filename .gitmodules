@@ -7,3 +7,6 @@
 [submodule "themes/hugomodo-image-processing"]
 	path = themes/hugomodo-image-processing
 	url = https://github.com/hugomodo/hugomodo-image-processing.git
+[submodule "themes/hugomodo-shortcode-partials"]
+	path = themes/hugomodo-shortcode-partials
+	url = https://github.com/hugomodo/hugomodo-shortcode-partials.git

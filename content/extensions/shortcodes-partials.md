@@ -1,5 +1,5 @@
 ---
-title: "Shortcodes Shim"
+title: "Shortcodes Partials"
 date: 2018-12-31T20:08:37Z
 draft: false
 ---
@@ -15,7 +15,7 @@ HugoModo Image Processing aims to circumvent that issue with an interpreter of i
 
 ## The solution
 
-The HugoModo Shortcodes Shim provides all of the existing Hugo shortcodes as partials, as well as an override for content interpretation. This solves the problem above, and provides a clear best practise for adding additional shortcodes.
+HugoModo Shortcode Partials provides all of the existing Hugo shortcodes as partials, as well as an override for content interpretation. This solves the problem above, and provides a clear best practise for adding additional shortcodes.
 
 ## This is not recommended
 
