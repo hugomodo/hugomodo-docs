@@ -95,7 +95,7 @@ All of these standard [Hugo shortcodes](https://gohugo.io/content-management/sho
 
 #### Markup
 
-``` html
+``` markdown
 [Hugo Goes Modular]({{</* ref "/blog/hugo-goes-modular.md" */>}})
 [List Pages]({{</* relref "/blog/hugo-goes-modular.md#list-pages" */>}})
 ```
