@@ -7,7 +7,9 @@ description: Built-in Hugo shortcodes and custom shortcodes provided by HugoModo
 
 ## Hugo
 
-All of these standard [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/) still work with HugoModo.
+All of the standard [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/) work with HugoModo by default.
+
+Those listed below also work with the shims provided by the [Shortcode Partials](/extensions/shortcode-partials) extension.
 
 ### figure
 
@@ -65,6 +67,7 @@ All of these standard [Hugo shortcodes](https://gohugo.io/content-management/sho
 
 *Note: If you use one of the content shims provided by a HugoModo extension, the above shortcode example will fail. You should opt for markdown code fences instead. Check out the Hugo docs for setup instructions: [Highlight in Code Fences](https://gohugo.io/content-management/syntax-highlighting/#highlight-in-code-fences).*
 
+<!---
 ### instagram
 
 #### Markup
@@ -140,6 +143,7 @@ All of these standard [Hugo shortcodes](https://gohugo.io/content-management/sho
 #### Example
 
 {{< youtube w7Ft2ymGmfc >}}
+--->
 
 ## HugoModo
 
