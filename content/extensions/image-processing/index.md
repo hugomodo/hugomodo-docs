@@ -82,13 +82,13 @@ uploadsDir = "uploads"
 
 ### ...or both!
 
-It is also possible to mix the two approaches by passing a `context` attribute to the provided shortcodes and templates:
+It is also possible to mix the two approaches. If the `src` string passed to imgproc contains a directory structure, it will look for your images in the given directory:
 
 ``` go-html-template
-{{</* imgproc context="uploads" src="jakob-owens-212555-unsplash.jpg" */>}}
+{{</* imgproc src="/uploads/jakob-owens-212555-unsplash.jpg" */>}}
 ```
 
-{{< imgproc context="uploads" src="jakob-owens-212555-unsplash.jpg" >}}
+{{< imgproc src="/uploads/jakob-owens-212555-unsplash.jpg" >}}
 
 ## Shortcodes
 
