@@ -52,7 +52,7 @@ All of these standard [Hugo shortcodes](https://gohugo.io/content-management/sho
 
 #### Example
 
-{{< highlight go-html-template >}}
+``` go-html-template
 <section id="main">
   <div>
    <h1 id="title">{{ .Title }}</h1>
@@ -61,7 +61,9 @@ All of these standard [Hugo shortcodes](https://gohugo.io/content-management/sho
     {{ end }}
   </div>
 </section>
-{{< /highlight >}}
+```
+
+*Note: If you use one of the content shims provided by a HugoModo extension, the above shortcode example will fail. You should opt for markdown code fences instead. Check out the Hugo docs for setup instructions: [Highlight in Code Fences](https://gohugo.io/content-management/syntax-highlighting/#highlight-in-code-fences).*
 
 ### instagram
 
