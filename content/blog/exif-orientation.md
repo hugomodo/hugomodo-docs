@@ -19,4 +19,16 @@ Next, we'll try adding the same image via Forestry (HugoModo's benchmark for com
 
 ![](/uploads/IMG_0760.JPG)
 
-The same image again, still displayed with incorrect orientation by default.
+The same image again, still displayed with incorrect orientation by default. And it looks as though Forestry currently lacks native image editing or processing capabilities (although it sounds like they have it in the works, as well).
+
+## We have some options...
+
+Hugo's image processing functionality does already provide the possibility to rotate images, but this must currently be done manually and per image - as noted above, it seems Hugo yet lacks awareness of Exif info. This could be a cumbersome undertaking for an end user with a photo gallery on their site, particularly if they have no development experience.
+
+Hugo is set to gain that information, with a working implementation already. But it looks like we're waiting on an upstream bugfix before it finds its way into a release.
+
+So I will revisit this at that time.
+
+Fortunately, for now, there is another way. Forestry have a partnership with the actually phenomenal image storage service, [Cloudinary](https://cloudinary.com/) who I believe handle this issue by default.
+
+One final test. Here's that duck again:
