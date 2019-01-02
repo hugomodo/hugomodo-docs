@@ -11,7 +11,7 @@ I just don't yet know what to do about Chroma.
 
 Chroma is Hugo's in-built syntax highlighter, for rendering beautiful code samples like this one:
 
-``` hugo
+``` go-html-template
 {{ if .IsPage }}
   {{ .Content }}
 {{ end }}
