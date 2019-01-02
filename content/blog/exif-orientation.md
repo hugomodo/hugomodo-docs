@@ -19,7 +19,7 @@ Next, we'll try adding the same image via Forestry (HugoModo's benchmark for com
 
 ![](/uploads/IMG_0760.JPG)
 
-The same image again, still displayed with incorrect orientation by default. And it looks as though Forestry currently lacks native image editing or processing capabilities (although it sounds like they have it in the works, as well).
+The same image again, still displayed with incorrect orientation by default. And it looks as though Forestry currently lacks native image editing or processing capabilities ([although it sounds like they have it in the works, as well](https://twitter.com/forestryio/status/1080244202464788480)).
 
 ## We have some options...
 
@@ -37,4 +37,22 @@ One final test. Here's that duck again:
 
 Oops. The orientation of our duck here was corrected in both Forestry and Cloudinary's media dashboards, but is still showing sideways in our content.
 
-Will look further into this.
+So as a final correction, it looks like we still have to adjust that URL. Not ideal. But this is where Cloudinary shines.
+
+Cloudinary takes a parameter for the angle of an image like so:
+
+```
+https://res.cloudinary.com/example/a_90/image.jpg
+```
+
+The `a_90` tells Cloudinary we want that image rotated 90 degrees, and it will serve us just that.
+
+This isn't what we want in this case, as Cloudinary displays the image corrected by default, at least in the dashboard. So we add `a_0` instead, to tell Cloudinary we want this image served the right way up:
+
+![](https://res.cloudinary.com/thombruce/image/upload/a_0/IMG_0760.jpg)
+
+Hey presto!
+
+Is this ideal? No. It still took some work to get us to this point, where we'd like to just upload our images and have 0 degrees be considered the default orientation.
+
+I will continue to look into this.
