@@ -19,3 +19,4 @@ fields:
   label: Images
 pages:
 - content/blog/forestry-compatible.md
+- content/docs/build-with-forestry.md
