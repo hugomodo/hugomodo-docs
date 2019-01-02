@@ -1,0 +1,11 @@
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: public
+  repo: hugomodo/hugomodo.github.io
+  allow-empty-commit: true
+  target-branch: master
+  on:
+    branch: master
