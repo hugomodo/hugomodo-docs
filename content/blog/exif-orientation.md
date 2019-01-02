@@ -32,3 +32,7 @@ So I will revisit this at that time.
 Fortunately, for now, there is another way. Forestry have a partnership with the actually phenomenal image storage service, [Cloudinary](https://cloudinary.com/) who I believe handle this issue by default.
 
 One final test. Here's that duck again:
+
+![](https://res.cloudinary.com/thombruce/image/upload/v1546437589/IMG_0760.jpg)
+
+Perfect!
