@@ -14,4 +14,4 @@ Unfortunately, it appears that Forestry can only handle project-based GitHub Pag
 
 I will revisit this and document the approach for project-based sites at another time, but [Forestry have a great guide](https://forestry.io/docs/hosting/github-pages/) themselves should you need it.
 
-For the time being, where it comes to HugoModo, I'm going to see if deployment via a CI service such as Jenkins is feasible.
+For the time being, where it comes to HugoModo, I'm going to see if deployment via a CI service such as TravisCI is feasible.
