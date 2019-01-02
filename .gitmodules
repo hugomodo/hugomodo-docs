@@ -10,3 +10,7 @@
 [submodule "themes/hugomodo-shortcode-partials"]
 	path = themes/hugomodo-shortcode-partials
 	url = https://github.com/hugomodo/hugomodo-shortcode-partials.git
+[submodule "public"]
+	path = public
+	url = git@github.com:hugomodo/hugomodo.github.io.git
+	branch = master
