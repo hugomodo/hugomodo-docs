@@ -16,7 +16,7 @@ I will revisit this and document the approach for project-based sites at another
 
 For the time being, where it comes to HugoModo, I'm going to see if deployment via a CI service such as TravisCI is feasible.
 
-And do you know what, it is. There are a lot of blog posts on others online with setups that vary in complexity. None are as simple as this:
+And do you know what? It is. There are a lot of blog posts from others online with setups that vary in complexity. None are as simple as this:
 
 ``` yaml
 # Clean and don't fail
