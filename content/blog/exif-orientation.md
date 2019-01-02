@@ -35,4 +35,6 @@ One final test. Here's that duck again:
 
 ![](https://res.cloudinary.com/thombruce/image/upload/v1546437589/IMG_0760.jpg)
 
-Perfect!
+Oops. The orientation of our duck here was corrected in both Forestry and Cloudinary's media dashboards, but is still showing sideways in our content.
+
+Will look further into this.
