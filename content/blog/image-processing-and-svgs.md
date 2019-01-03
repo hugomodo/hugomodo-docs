@@ -31,3 +31,7 @@ As should be expected, an error:
     execute of template failed: template: partials/image-processing/imgproc.html:13:10: executing "partials/image-processing/imgproc.html" at <.Resize>: can't evaluate field Resize in type resource.Resource
 
 If I turn off my content shims we avoid this, but then we lack image processing and, in fact, all shortcode functionality.
+
+For content files, Hugo provides a handy `.File.Ext` variable for looking at a file's extension. But with our approach to image processing, we are using a `string` to find a Hugo `Resource`. Neither's a content file, so it won't work here. We'll have to examine the string instead for its extension.
+
+To do this, we'll split the string on `.` like so:
