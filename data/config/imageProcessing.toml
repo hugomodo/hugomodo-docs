@@ -1,4 +1,4 @@
 # uploadsDir = "uploads"
 contentShim = true
 
-resizeMeta = true
+resizeMeta = false
