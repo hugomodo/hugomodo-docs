@@ -1,6 +1,6 @@
 +++
 date = "2019-01-03T00:00:00+00:00"
-images = []
+images = ["/uploads/hugo-logo-wide.svg"]
 title = "Image Processing and SVGs"
 
 +++
@@ -22,4 +22,6 @@ Here, we have the Hugo logo:
 
 ![](/uploads/hugo-logo-wide.svg)
 
-The first thing I notice, adding this in Forestry's editor is... it doesn't display in Forestry's editor. The entity is there, it simply isn't showing. I imagine this will be different when I preview the site so I'm going to save this file and move to the next step...
+I've added that here, and to the page's metadata for interpretation by the script for Open Graph images in my site's head.
+
+The first thing I notice, adding this in Forestry's editor is... it doesn't display in Forestry's editor. The entity is there, it simply isn't showing in the body of text. I imagine this will be different when I preview the site so I'm going to save this file and move to the next step...
