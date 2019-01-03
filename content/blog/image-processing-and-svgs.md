@@ -25,3 +25,9 @@ Here, we have the Hugo logo:
 I've added that here, and to the page's metadata for interpretation by the script for Open Graph images in my site's head.
 
 The first thing I notice, adding this in Forestry's editor is... it doesn't display in Forestry's editor. The entity is there, it simply isn't showing in the body of text. I imagine this will be different when I preview the site so I'm going to save this file and move to the next step...
+
+As should be expected, an error:
+
+    execute of template failed: template: partials/image-processing/imgproc.html:13:10: executing "partials/image-processing/imgproc.html" at <.Resize>: can't evaluate field Resize in type resource.Resource
+
+If I turn off my content shims we avoid this, but then we lack image processing and, in fact, all shortcode functionality.
