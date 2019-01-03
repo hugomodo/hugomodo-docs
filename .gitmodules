@@ -14,3 +14,6 @@
 	path = public
 	url = git@github.com:hugomodo/hugomodo.github.io.git
 	branch = master
+[submodule "themes/hugomodo-fusejs"]
+	path = themes/hugomodo-fusejs
+	url = https://github.com/hugomodo/hugomodo-fusejs.git
