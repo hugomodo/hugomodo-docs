@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "HugoModo"
 
 theme = [
+  "hugomodo-fusejs",
   "hugomodo-shortcode-partials",
   "hugomodo-image-processing",
   "hugomodo-best-motherfucking-website"
@@ -12,3 +13,10 @@ pygmentsCodeFences = true
 
 [Params]
   description = "A modular Hugo framework."
+
+[outputs]
+  home = [
+    "HTML",
+    "RSS",
+    "JSON"
+  ]
