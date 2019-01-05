@@ -4,15 +4,15 @@ date: 2018-12-30T16:54:08Z
 draft: false
 description: Adds Hugo's image processing to HugoModo for Page Bundles.
 ---
-## Description
+### Description
 
-### Features
+#### Features
 
 - Provides `imgproc` and `figproc` shortcodes for image processing in your content files.
 - Uses `srcset` to load responsive image sizes on different screen resolutions.
 - Can be configured to use Page Bundles, a headless Resources bundle, or both!
 
-#### Todo
+##### Todo
 
 1. Equivalents for theme layouts are provided: `image-processing/imgproc.html` and `image-processing/figproc.html`.
   - These already exist. Modification required so that context can be passed.
@@ -30,7 +30,7 @@ description: Adds Hugo's image processing to HugoModo for Page Bundles.
   - twitter cards
   - structured data
 
-## Installation
+### Installation
 
 From your Hugo site's root directory:
 
@@ -56,17 +56,17 @@ themes = [
 ]
 ```
 
-## Configuration
+### Configuration
 
 HugoModo Image Processing can be configured one of two ways. The default is to use Hugo's Page Bundles, but an alternative approach using an uploads directory that provides compatibility with third party Content Management Systems can be setup with minimal configuration.
 
-### Page Bundles
+#### Page Bundles
 
 By default, HugoModo Image Processing uses Page Bundles as described by the Hugo docs: [Page Bundles](https://gohugo.io/content-management/organization/#page-bundles)
 
 No additional configuration is required to use HugoModo Image Processing this way.
 
-### Uploads Directory
+#### Uploads Directory
 
 You can configure HugoModo Image Processing to use an uploads directory instead, for compatibility with some Content Management Systems such as Forestry who write up the idea behind the uploads directory here: [How To Use Hugo's Image Processing With Forestry](https://forestry.io/blog/how-to-use-hugo-s-image-processing-with-forestry/)
 
@@ -80,7 +80,7 @@ uploadsDir = "uploads"
 
 ...and that's it! You can now add your images to a `content/uploads` directory and have HugoModo's image processing shortcodes will look for your resources there instead.
 
-### ...or both!
+#### ...or both!
 
 It is also possible to mix the two approaches. If the `src` string passed to imgproc contains a directory structure, it will look for your images in the given directory:
 
@@ -90,9 +90,9 @@ It is also possible to mix the two approaches. If the `src` string passed to img
 
 {{< imgproc src="/uploads/jakob-owens-212555-unsplash.jpg" >}}
 
-## Shortcodes
+### Shortcodes
 
-### imgproc
+#### imgproc
 
 ``` go-html-template
 {{</* imgproc src="fabian-grohs-423591-unsplash.jpg" */>}}
@@ -100,7 +100,7 @@ It is also possible to mix the two approaches. If the `src` string passed to img
 
 {{< imgproc src="fabian-grohs-423591-unsplash.jpg" >}}
 
-### figproc
+#### figproc
 
 ``` go-html-template
 {{</* figproc src="fabian-grohs-423591-unsplash.jpg" caption="Computer on a desk" */>}}

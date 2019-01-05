@@ -4,7 +4,7 @@ date: 2019-01-03T03:09:44Z
 draft: false
 ---
 
-## Installation
+### Installation
 
 Follow the usual steps for installing a HugoModo extension, then:
 
@@ -30,6 +30,6 @@ layout: search
 
 * That's it! Were you expecting extra steps? Load up your site and visit `/search` to see it working.
 
-## Roadmap
+### Roadmap
 
 1. Searchbar partial for inclusion in templates.
