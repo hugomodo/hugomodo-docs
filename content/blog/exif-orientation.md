@@ -1,7 +1,8 @@
 ---
 title: Exif Orientation
 date: 2019-01-02 13:05:15 +0000
-
+authors:
+- Thom Bruce
 ---
 When you take a picture with your camera or phone, you can do so holding the device at any of four orientations. When using my iPhone for instance, I can take a photo vertically holding my phone with the home button at the bottom, I can take a photo with the home button oriented to the left or the right, I could even take a photo with the home button at the top - my phone upside down.
 

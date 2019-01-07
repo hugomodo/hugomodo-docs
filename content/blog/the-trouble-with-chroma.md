@@ -2,6 +2,8 @@
 title: "The Trouble With Chroma, Hugo's Syntax Highlighting Library"
 date: 2018-12-31T22:57:07Z
 draft: false
+authors:
+- Thom Bruce
 ---
 One of the core principles of HugoModo is to stick to the Hugo way of doing things where possible and sensible to do so. This reduces the likelihood of incompatibility, and should make for greater ease of use for anyone familiar with Hugo or working from the Hugo documentation.
 

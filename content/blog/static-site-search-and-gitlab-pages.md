@@ -2,7 +2,9 @@
 date = "2019-01-04T00:00:00+00:00"
 images = []
 title = "Fuse.js Static Site Search and GitLab Pages"
-
+authors = [
+ "Thom Bruce"
+]
 +++
 The greatest selling point of static sites over dynamic is also their greatest drawback. They're essentially serverless. That means no logins, no dynamic rendering and no form submissions. Of course there are workarounds for all of these, and with the right setup nobody will be able to tell the difference.
 

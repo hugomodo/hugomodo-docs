@@ -2,7 +2,9 @@
 date = "2019-01-07T00:00:00+00:00"
 images = []
 title = "Hugo's Author and Authors"
-
+authors = [
+  "Thom Bruce"
+]
 +++
 HugoModo aims, best as it can, to do things the Hugo way. This means not superseding any functionality, and not providing a wildly different setup. Essentially, one should be able to build a Hugo site by following Hugo's own docs, and that site should be compatible with HugoModo's themes and extensions. And so far, I believe that's true.
 

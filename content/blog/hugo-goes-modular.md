@@ -2,6 +2,8 @@
 title: "Hugo Goes Modular"
 date: 2018-12-29T01:11:18Z
 draft: false
+authors:
+- Thom Bruce
 ---
 
 ### A Better Base

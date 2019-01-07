@@ -2,7 +2,9 @@
 date = "2018-12-31T00:00:00+00:00"
 images = ["/uploads/thomas-le-578994-unsplash.jpg"]
 title = "Forestry Compatible"
-
+authors = [
+ "Thom Bruce"
+]
 +++
 HugoModo is designed to be compatible with the static site, headless CMS, [Forestry](https://forestry.io/ "Forestry.io CMS").
 

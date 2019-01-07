@@ -2,7 +2,9 @@
 date = "2019-01-03T00:00:00+00:00"
 images = ["/uploads/hugo-logo-wide.svg"]
 title = "Image Processing and SVGs"
-
+authors = [
+ "Thom Bruce"
+]
 +++
 One of the first HugoModo extensions I've written is [HugoModo Image Processing](/extensions/image-processing). This extension does a few things. By default it just provides a pair of shortcodes for Hugo that achieve image processing in content files. This is "the Hugo way", so is the sensible behaviour. But we go beyond that.
 
