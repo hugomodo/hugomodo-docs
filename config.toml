@@ -29,13 +29,3 @@ pygmentsCodeFences = true
   series = "series"
   tag = "tags"
   author = "authors"
-
-[Author]
-  [Author.Social]
-    website = "https://thombruce.com/"
-    github = "thombruce"
-    facebook = "thombruce"
-    twitter = "thombruce"
-    instagram = "thombruce"
-    linkedin = "thombruce"
-    skype = "thom.bruce"
