@@ -83,13 +83,13 @@ Theme developers might like to know how to override these, and I personally find
 
 To override the authors index page, create a layout at:
 
-```
+``` bash
 /layout/authors/terms.html
 ```
 
 To override the individual author page:
 
-```
+``` bash
 /layout/authors/taxonomy.html
 ```
 
