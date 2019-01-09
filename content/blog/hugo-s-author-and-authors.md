@@ -20,10 +20,12 @@ I believe that a common need of blogging websites is an authors list, with autho
 
 At present, Hugo supports a single author by default in a site's config:
 
-    Author:
-      givenName: John
-      familyName: Doe
-      displayName: John Doe
+``` yaml
+Author:
+  givenName: John
+  familyName: Doe
+  displayName: John Doe
+```
 
 It does extend a `map` of authors for a site via `.Site.Authors`, but I am unsure of how or even if this can be populated at present. Which means... we'll have to deviate from the path a little and rejoin Hugo along the way, when the Authors model is in a more complete state.
 
@@ -37,19 +39,23 @@ And we will make the assumption that our new author pages will provide all of th
 
 The first steps to activating an authors list for a site are ones we cannot take in a theme or extension (well, we could but it's best we don't). 'Authors' needs to be configured as a taxonomy:
 
-    taxonomies:
-      category: categories
-      series: series
-      tag: tags
-      author: authors
+``` yaml
+taxonomies:
+  category: categories
+  series: series
+  tag: tags
+  author: authors
+```
 
 When you add a taxonomy in Hugo, you're actually overwriting the hash of taxonomies Hugo assumes active by default. These are categories, series and tags. You can safely leave them out if you don't want them.
 
 With that done, we can now add authors in our content files as frontmatter:
 
-    title: Some Piece of Content
-    authors:
-    - John Doe
+``` yaml
+title: Some Piece of Content
+authors:
+- John Doe
+```
 
 That's it. When we now build our site, an author page will exist for listed author and all of his/her associated content will be shown there. In fact, HugoModo's themes already output the author tag with each post. No further work needed.
 
@@ -57,11 +63,13 @@ In two really easy steps, we now have author pages. But they don't tell us very 
 
 For customisable author pages, we'll have to add a section for our `authors` taxonomy as well as a page for each author. The resultant directory structure should look something like this:
 
-    content
-    - authors
-      - _index.md
-      - john-doe
-        - _index.md
+``` yaml
+content
+- authors
+  - _index.md
+  - john-doe
+    - _index.md
+```
 
 Both `authors` and `john-doe` here are what Hugo defines as `Branch Bundles`, designated by the presence of a `_index.md` file (don't forget the underscore). This is important, as this will lead Hugo to interpret the author page as a collection, rather than as a single page. And this will enable Hugo to list the author's content.
 
@@ -75,11 +83,15 @@ Theme developers might like to know how to override these, and I personally find
 
 To override the authors index page, create a layout at:
 
-    /layout/authors/terms.html
+```
+/layout/authors/terms.html
+```
 
 To override the individual author page:
 
-    /layout/authors/taxonomy.html
+```
+/layout/authors/taxonomy.html
+```
 
 Hugo will fallback to using the default layout for either, or a default list layout if present.
 

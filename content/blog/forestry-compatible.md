@@ -20,7 +20,9 @@ HugoModo Image Processing can be configured to look for and use any content dire
 
 To turn this on, simply add a file at `data/imageProcessing/config.toml` with the content:
 
-    uploadsDir = "uploads"
+``` toml
+uploadsDir = "uploads"
+```
 
 This can be any path you like, but the folder should exist in your site's content directory, and should contain an `index.md` set to act as a headless bundle.
 

@@ -26,7 +26,9 @@ The first thing I notice, adding this in Forestry's editor is... it doesn't disp
 
 As should be expected, an error:
 
-    execute of template failed: template: partials/image-processing/imgproc.html:13:10: executing "partials/image-processing/imgproc.html" at <.Resize>: can't evaluate field Resize in type resource.Resource
+```
+execute of template failed: template: partials/image-processing/imgproc.html:13:10: executing "partials/image-processing/imgproc.html" at <.Resize>: can't evaluate field Resize in type resource.Resource
+```
 
 If I turn off my content shims we avoid this, but then we lack image processing and, in fact, all shortcode functionality.
 
@@ -34,19 +36,25 @@ For content files, Hugo provides a handy `.File.Ext` variable for looking at a f
 
 To do this, we'll split the string on `.` like so:
 
-    {{ $pathArr := split $src "." }}
-    {{ $pathLen := len $pathArr }}
-    {{ $ext := index $pathArr (sub $pathLen 1) }}
+``` go-html-template
+{{ $pathArr := split $src "." }}
+{{ $pathLen := len $pathArr }}
+{{ $ext := index $pathArr (sub $pathLen 1) }}
+```
 
 We already have the `$src` var, it's simply the path to the image. And now before we do anything else with it, we can check whether its extension is equal to `svg` like so:
 
-    {{ if eq $ext "svg" }}
+``` go-html-template
+{{ if eq $ext "svg" }}
+```
 
 We then act on that accordingly, using a different block than we will for further image processing.
 
 Unfortunately, this hasn't immediately worked. It looks like some pre-existing steps I've taken strip the path to my `uploads` folder from the `src` string. I should refactor a little to improve the approach, but for a quick fix while I still have the `uploads` context kicking around I simply:
 
-    {{ printf "/%s%s" .context.Dir $src }}
+``` go-html-template
+{{ printf "/%s%s" .context.Dir $src }}
+```
 
 `.context` is a variable I've passed to this partial, and represents the resource bundle itself (in my case "uploads"). The `.Dir` variable provides the path to the folder containing that bundle, and we've already discussed `$src`. The rest merely combines those two variables back into the original source path. A hack for now, but a working one.
 

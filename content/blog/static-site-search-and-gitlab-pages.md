@@ -28,14 +28,16 @@ Frustrating, but perhaps submitting the query as a full page request was never t
 
 We work around the problem like so:
 
-    jQuery("#search-query").parent().submit(function( event ) {
-      if(jQuery("#search-query").val()){
-        executeSearch(jQuery("#search-query").val());
-      } else {
-        jQuery('#search-results').html("<p>Please enter a word or phrase above</p>");
-      }
-      event.preventDefault();
-    });
+``` javascript
+jQuery("#search-query").parent().submit(function( event ) {
+  if(jQuery("#search-query").val()){
+    executeSearch(jQuery("#search-query").val());
+  } else {
+    jQuery('#search-results').html("<p>Please enter a word or phrase above</p>");
+  }
+  event.preventDefault();
+});
+```
 
 _Yup, sadly jQuery is still a dependency for now. I'm working on it!_
 
