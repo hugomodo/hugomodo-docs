@@ -20,7 +20,7 @@ But if you're using Tachyons that way, I argue there's a better way.
 
 That better way is a CSS preprocessor like [SASS](https://sass-lang.com/ "SASS CSS Preprocessor"). Y'see, SASS allows you to write style rules like this:
 
-```sass
+```scss
 .my-selector {
   @extend .some-other-selector;
 }
@@ -119,7 +119,7 @@ We don't, for example, need to provide a class to either of the `header` element
 
 We might also consider adding a class to the body, to differentiate between pages of blog posts and of product listings. `<body class="blog">` and `<body class="store">` for instance. And from that we could style every item on the page differently straight from the stylesheet.
 
-And given that we've used semantic HTML5 elements, we don't have countless divs that need differentiating between. _Although I should note that while I recommend this approach, these HTML5 elements should not be used merely for styling purposes but should absolutely also be descriptive of their contents. Do use_ `_div_` _for arbitrary styling of block-level elements (and_ `_span_` _incidentally for text, not_ `_u_`_)._
+And given that we've used semantic HTML5 elements, we don't have countless divs that need differentiating between. _Although I should note that while I recommend this approach, these HTML5 elements should not be used merely for styling purposes but should absolutely also be descriptive of their contents. Do use `div` for arbitrary styling of block-level elements (and `span` incidentally for text, not `u`)._
 
 I guess what I'm arguing for is an approach to styling that's semantic, like the HTML it ought to be being applied to here in 2019 (I don't blame you if you don't - I'm as bad as you are for not keeping up).
 
