@@ -1,10 +1,8 @@
 +++
+authors = ["Thom Bruce"]
 date = "2019-01-09T00:00:00+00:00"
 images = []
 title = "An Opinionated Approach to Markup"
-authors = [
-  "Thom Bruce"
-]
 
 +++
 I was asked today how many users Hugomodo has at the moment. I expect the answer is actually just the one, and I kind of hope that's the case for now too. I do have plans to introduce a [sort of semantic versioning](https://github.com/hugomodo/hugomodo-best-motherfucking-website/issues/1 "Semantic Versioning, Sort Of Issue on GitHub") strategy for themes but it isn't my immediate priority. So for the time being, HugoModo development is unstable. I'm still moving the pieces around before they settle into place.
@@ -122,7 +120,7 @@ We don't, for example, need to provide a class to either of the `header` element
 
 We might also consider adding a class to the body, to differentiate between pages of blog posts and of product listings. `<body class="blog">` and `<body class="store">` for instance. And from that we could style every item on the page differently straight from the stylesheet.
 
-And given that we've used semantic HTML5 elements, we don't have countless divs that need differentiating between. _Although I should note that while I recommend this approach, these HTML5 elements should not be used merely for styling purposes but should absolutely also be descriptive of their contents. Do use `div` for arbitrary styling of block-level elements (and `span` incidentally for text, not `u`)._
+And given that we've used semantic HTML5 elements, we don't have countless divs that need differentiating between. _Although I should note that while I recommend this approach, these HTML5 elements should not be used merely for styling purposes but should absolutely also be descriptive of their contents. Do use_ `_div_` _for arbitrary styling of block-level elements (and_ `_span_` _incidentally for text, not_ `_u_`_)._
 
 I guess what I'm arguing for is an approach to styling that's semantic, like the HTML it ought to be being applied to here in 2019 (I don't blame you if you don't - I'm as bad as you are for not keeping up).
 
@@ -138,3 +136,5 @@ The philosophy is simple:
 This should mean minimal reconfiguration or easier refactoring if and when style frameworks are swapped out. Something that's so important for the modularity of HugoModo. We'll see how that pans out...
 
 If everything goes wrong, I'll do a follow up with lessons learned. If not, I will return waving a beautifully styled flag and encouraging you all to join the revolution. Watch this space.
+
+_Update: Writing for Smashing Magazine, Heydon seems to think_ [_I ought to go further_](https://www.smashingmagazine.com/2012/06/classes-where-were-going-we-dont-need-classes/ "We Don't Need Classes - Smashing Magazine")_! I'm not alone, huzzah!_
