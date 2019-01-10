@@ -14,6 +14,9 @@ fields:
   config:
     date_format: DD/MM/YYYY
     required: true
+- type: tag_list
+  name: authors
+  label: Authors
 - type: image_gallery
   name: images
   label: Images
