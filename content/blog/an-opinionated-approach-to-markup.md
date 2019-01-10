@@ -2,6 +2,9 @@
 date = "2019-01-09T00:00:00+00:00"
 images = []
 title = "An Opinionated Approach to Markup"
+authors = [
+  "Thom Bruce"
+]
 
 +++
 I was asked today how many users Hugomodo has at the moment. I expect the answer is actually just the one, and I kind of hope that's the case for now too. I do have plans to introduce a [sort of semantic versioning](https://github.com/hugomodo/hugomodo-best-motherfucking-website/issues/1 "Semantic Versioning, Sort Of Issue on GitHub") strategy for themes but it isn't my immediate priority. So for the time being, HugoModo development is unstable. I'm still moving the pieces around before they settle into place.
