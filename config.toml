@@ -10,6 +10,7 @@ theme = [
 ]
 
 pygmentsCodeFences = true
+enableEmoji = true
 
 [Params]
   description = "A modular Hugo framework."

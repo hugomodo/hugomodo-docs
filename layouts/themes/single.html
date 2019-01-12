@@ -1,0 +1,31 @@
+{{ define "main" }}
+  <main>
+    <header>
+      {{ partial "shared/breadcrumb-nav.html" . }}
+    </header>
+    <article>
+      {{ partial "article/featured_image.html" . }}
+      {{ partial "article/header.html" . }}
+      {{ partial "article/meta.html" . }}
+
+      {{ $repo := .Params.repo }}
+      {{ if $repo }}
+        {{ $resp := getJSON (printf "https://api.github.com/repos/%s/readme" $repo)  }}
+        {{ $resp.content | base64Decode | emojify | markdownify }}
+      {{ else }}
+        {{ partial "article/content.html" . }}
+      {{ end }}
+
+      {{ if .Param "authors" }}
+        {{ partial "article/authors.html" . }}
+      {{ else }}
+        {{ if .Site.Author }}
+          {{ partial "article/author.html" . }}
+        {{ end }}
+      {{ end }}
+    </article>
+    <footer>
+      {{ partial "article/comments.html" . }}
+    </footer>
+  </main>
+{{ end }}
