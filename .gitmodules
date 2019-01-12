@@ -17,3 +17,6 @@
 [submodule "themes/hugomodo-fusejs"]
 	path = themes/hugomodo-fusejs
 	url = https://github.com/hugomodo/hugomodo-fusejs.git
+[submodule "themes/hugomodo-milligram"]
+	path = themes/hugomodo-milligram
+	url = https://github.com/hugomodo/hugomodo-milligram.git
