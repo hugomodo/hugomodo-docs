@@ -8,9 +8,10 @@
       {{ partial "article/header.html" . }}
       {{ partial "article/meta.html" . }}
 
+      {{ $user := "thombruce" }}
       {{ $repo := .Params.repo }}
       {{ if $repo }}
-        {{ $resp := getJSON (printf "https://api.github.com/repos/%s/readme" $repo)  }}
+        {{ $resp := getJSON (printf "https://%s@api.github.com/repos/%s/readme" $user $repo)  }}
         {{ $resp.content | base64Decode | emojify | markdownify }}
       {{ else }}
         {{ partial "article/content.html" . }}
