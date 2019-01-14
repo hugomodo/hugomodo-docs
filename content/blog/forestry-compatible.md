@@ -28,7 +28,7 @@ This can be any path you like, but the folder should exist in your site's conten
 
 The following image has been uploaded in Forestry's dashboard:
 
-![](/uploads/thomas-le-578994-unsplash.jpg)
+![Image of a mic uploaded via Forestry](/uploads/thomas-le-578994-unsplash.jpg)
 
 Unfortunately, inline images cannot be added via the Forestry dashboard and handled automatically by HugoModo's image processing shortcodes.
 

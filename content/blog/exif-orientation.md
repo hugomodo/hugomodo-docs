@@ -10,7 +10,7 @@ When one takes a snap on a modern device, the device itself will factor in orien
 
 That said, here's a photo of a duck:
 
-![](/uploads/duck_hugo_dev.JPG)
+![Image of a duck inserted manually](/uploads/duck_hugo_dev.JPG)
 
 My phone and laptop know to show me this image the right way up, but Hugo doesn't ([yet](https://github.com/gohugoio/hugo/issues/4600)).
 
@@ -18,7 +18,7 @@ The above photo was added directly to my site offline via a text editor. A simpl
 
 Next, we'll try adding the same image via Forestry (HugoModo's benchmark for compatibility):
 
-![](/uploads/IMG_0760.JPG)
+![Image of a duck uploaded via Forestry](/uploads/IMG_0760.JPG)
 
 The same image again, still displayed with incorrect orientation by default. And it looks as though Forestry currently lacks native image editing or processing capabilities ([although it sounds like they have it in the works, as well](https://twitter.com/forestryio/status/1080244202464788480)).
 
@@ -34,7 +34,7 @@ Fortunately, for now, there is another way. Forestry have a partnership with the
 
 One final test. Here's that duck again:
 
-![](https://res.cloudinary.com/thombruce/image/upload/v1546437589/IMG_0760.jpg)
+![Image of a duck uploaded to Cloudinary](https://res.cloudinary.com/thombruce/image/upload/v1546437589/IMG_0760.jpg)
 
 Oops. The orientation of our duck here was corrected in both Forestry and Cloudinary's media dashboards, but is still showing sideways in our content.
 
@@ -50,7 +50,7 @@ The `a_90` tells Cloudinary we want that image rotated 90 degrees, and it will s
 
 This isn't what we want in this case, as Cloudinary displays the image corrected by default, at least in the dashboard. So we add `a_0` instead, to tell Cloudinary we want this image served the right way up:
 
-![](https://res.cloudinary.com/thombruce/image/upload/a_0/IMG_0760.jpg)
+![Image of a duck uploaded to Cloudinary and rotated](https://res.cloudinary.com/thombruce/image/upload/a_0/IMG_0760.jpg)
 
 Hey presto!
 

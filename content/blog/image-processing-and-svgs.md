@@ -18,7 +18,7 @@ HugoModo Image Processing, however, does need to be aware of these files, which 
 
 Here, we have the Hugo logo:
 
-![](/uploads/hugo-logo-wide.svg)
+![Hugo logo](/uploads/hugo-logo-wide.svg)
 
 I've added that here, and to the page's metadata for interpretation by the script for Open Graph images in my site's head (these are the images Facebook uses to display a picture when you share a link).
 
