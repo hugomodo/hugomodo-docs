@@ -8,14 +8,20 @@
       {{ partial "article/header.html" . }}
       {{ partial "article/meta.html" . }}
 
-      {{ $user := "thombruce" }}
-      {{ $repo := .Params.repo }}
-      {{ if $repo }}
-        {{ $resp := getJSON (printf "https://%s@api.github.com/repos/%s/readme" $user $repo)  }}
-        {{ $resp.content | base64Decode | emojify | markdownify }}
-      {{ else }}
-        {{ partial "article/content.html" . }}
-      {{ end }}
+      {{/*
+        TODO: Build failures on Travis CI are unacceptable!
+              Are they avoidable? Investigate.
+        {{ $user := "thombruce" }}
+        {{ $repo := .Params.repo }}
+        {{ if $repo }}
+          {{ $resp := getJSON (printf "https://%s@api.github.com/repos/%s/readme" $user $repo)  }}
+          {{ $resp.content | base64Decode | emojify | markdownify }}
+        {{ else }}
+          {{ partial "article/content.html" . }}
+        {{ end }}
+      */}}
+
+      {{ partial "article/content.html" . }}
 
       {{ if .Param "authors" }}
         {{ partial "article/authors.html" . }}
