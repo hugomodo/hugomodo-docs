@@ -20,3 +20,6 @@
 [submodule "themes/hugomodo-milligram"]
 	path = themes/hugomodo-milligram
 	url = https://github.com/hugomodo/hugomodo-milligram.git
+[submodule "themes/hugomodo-cookie-consent"]
+	path = themes/hugomodo-cookie-consent
+	url = https://github.com/hugomodo/hugomodo-cookie-consent.git
