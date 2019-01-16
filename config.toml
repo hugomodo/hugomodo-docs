@@ -13,6 +13,7 @@ pygmentsCodeFences = true
 enableEmoji = true
 
 googleAnalytics = "UA-58994131-3"
+disqusShortname = "hugomodo"
 
 [Params]
   description = "A modular Hugo framework."
