@@ -12,6 +12,8 @@ theme = [
 pygmentsCodeFences = true
 enableEmoji = true
 
+googleAnalytics = "UA-58994131-3"
+
 [Params]
   description = "A modular Hugo framework."
 
@@ -30,8 +32,6 @@ enableEmoji = true
   series = "series"
   tag = "tags"
   author = "authors"
-
-googleAnalytics = "UA-58994131-3"
 
 [privacy]
   [privacy.googleAnalytics]
