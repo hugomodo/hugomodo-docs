@@ -1,15 +1,11 @@
-# Clean and don't fail
 install:
-  - rm -rf public || exit 0
-
-# Build the website
+- rm -rf public || exit 0
 script:
-  - bin/hugo
-
+- bin/hugo
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  github-token: "$GITHUB_TOKEN"
   keep-history: true
   local-dir: public
   repo: hugomodo/hugomodo.github.io
@@ -17,3 +13,6 @@ deploy:
   target-branch: master
   on:
     branch: master
+notifications:
+  slack:
+    secure: lFhlOogMP3X/GlHFJn5UXKwxbwWQGxT0YvNjh1M4fupWXxYkBAOzvOTWHuPy/IiHXVXMcf8XlrAceB/1FXOwE2qTy5WeOH83kZOanRC32vDgpAIOxIWX91u219q63v/AJ0oKuCuT+Lca/NRExk4hmLMQwsAJ+CgLMIfVlOB1xpZcPKQX6jpJZB1Bux0wCXceoUqVC8PUKnOw/tk1OXb5IpuElmRD2plu7vD3ppgTJdtQrXDrUHIdMbg9u9uAlBJOV3ChqPKqMxlp6SfRT2+afkjwfFkVwx+OIv/XQZNgFCS5X20HgZyclaNSa47FAGf+u4gALBsZcf8ojuYzFg5ENCv/GJFX5yHb+e6BuVUxUvEkQutOTQLnMs2eLAOiwzbvtdyexjo+eAC+RwibQvSXO433NsUEsD/qQVhpF7a6HK/h4doy0H4eaT4iH2OsJdksdSN6hicgSGrG/uG19vzcdzhYiwkt1l+dWBn6EZohRePD1fyjcaOQBx+yS3syzTGXBsB20YHPRVujKCnAQcnf7IIAs3vo9OV2rNV2y0KI43Q6U42rImX7mrmw+UUtYbtNW3AXID6X/Zk3gbYCTT3vP47yDziPAaq2GwKeTFOcuVoih1fYUCs4Z9o0lWzcrAaoxoq955gUBK0yCBwWri8G2TaQm7306H1GDzohXy25enw=
