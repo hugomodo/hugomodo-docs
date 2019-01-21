@@ -25,5 +25,6 @@ pages:
 - content/blog/image-processing-and-svgs.md
 - content/blog/static-site-search-and-gitlab-pages.md
 - content/blog/hugo-s-author-and-authors.md
-- content/blog/an-opinionated-approach-to-markup.md
 - content/blog/forestry-compatible.md
+- content/blog/an-opinionated-approach-to-markup.md
+- content/blog/hugo-s-table-of-contents.md
