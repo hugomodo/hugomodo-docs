@@ -5,39 +5,39 @@ draft: false
 description: Built-in Hugo shortcodes and custom shortcodes provided by HugoModo.
 ---
 
-### Hugo
+## Hugo
 
 All of the standard [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/) work with HugoModo by default.
 
 Those listed below also work with the shims provided by the [Shortcode Partials](/extensions/shortcode-partials) extension.
 
-#### figure
+### figure
 
-##### Markup
+#### Markup
 
 ``` html
 {{</* figure src="/img/mountaineer.jpg" title="A walk with a view." */>}}
 ```
 
-##### Example
+#### Example
 
 {{< figure src="/img/mountaineer.jpg" title="A walk with a view." >}}
 
-#### gist
+### gist
 
-##### Markup
+#### Markup
 
 ``` html
 {{</* gist spf13 7896402 */>}}
 ```
 
-##### Example
+#### Example
 
 {{< gist spf13 7896402 >}}
 
-#### highlight
+### highlight
 
-##### Markup
+#### Markup
 
 ``` html
 {{</* highlight go-html-template */>}}
@@ -52,7 +52,7 @@ Those listed below also work with the shims provided by the [Shortcode Partials]
 {{</* /highlight */>}}
 ```
 
-##### Example
+#### Example
 
 ``` go-html-template
 <section id="main">
@@ -68,83 +68,83 @@ Those listed below also work with the shims provided by the [Shortcode Partials]
 *Note: If you use one of the content shims provided by a HugoModo extension, the above shortcode example will fail. You should opt for markdown code fences instead. Check out the Hugo docs for setup instructions: [Highlight in Code Fences](https://gohugo.io/content-management/syntax-highlighting/#highlight-in-code-fences).*
 
 <!---
-#### instagram
+### instagram
 
-##### Markup
+#### Markup
 
 ``` html
 {{</* instagram BWNjjyYFxVx */>}}
 ```
 
-##### Example
+#### Example
 
 {{< instagram BWNjjyYFxVx >}}
 
-#### param
+### param
 
 *Requires Hugo version 0.52 or higher*
 
-##### Markup
+#### Markup
 
 ``` html
 {{</* param description */>}}
 ```
 
-##### Example
+#### Example
 
 {{< param description >}}
 
-#### ref and relref
+### ref and relref
 
-##### Markup
+#### Markup
 
 ``` markdown
 [Hugo Goes Modular]({{</* ref "/blog/hugo-goes-modular.md" */>}})
 [List Pages]({{</* relref "/blog/hugo-goes-modular.md#list-pages" */>}})
 ```
 
-##### Example
+#### Example
 
 [Hugo Goes Modular]({{< ref "/blog/hugo-goes-modular.md" >}})
 [List Pages]({{< relref "/blog/hugo-goes-modular.md#list-pages" >}})
 
-#### tweet
+### tweet
 
-##### Markup
+#### Markup
 
 ``` html
 {{</* tweet 877500564405444608 */>}}
 ```
 
-##### Example
+#### Example
 
 {{< tweet 877500564405444608 >}}
 
-#### vimeo
+### vimeo
 
-##### Markup
+#### Markup
 
 ``` html
 {{</* vimeo 146022717 */>}}
 ```
 
-##### Example
+#### Example
 
 {{< vimeo 146022717 >}}
 
-#### youtube
+### youtube
 
-##### Markup
+#### Markup
 
 ``` html
 {{</* youtube w7Ft2ymGmfc */>}}
 ```
 
-##### Example
+#### Example
 
 {{< youtube w7Ft2ymGmfc >}}
 --->
 
-### HugoModo
+## HugoModo
 
 HugoModo will extend the standard set of shortcodes. Take a look at the extensions library for a complete list.

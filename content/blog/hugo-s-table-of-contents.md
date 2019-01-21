@@ -12,7 +12,7 @@ So... Hugo has this [Table of Contents feature built in](https://gohugo.io/conte
 
 That would be fine if I weren't also intent on making HugoModo semantically correct and valid HTML. Y'see... I've taken a bit of a workaround in my content files. To explain the situation, we need to talk about headers and we should begin with the site layout files.
 
-### Site and Article Titles
+## Site and Article Titles
 
 Every page on HugoModo features two titles by default: the title of the site and the title of the current page. Stripped of all other markup, they look like this:
 
@@ -32,7 +32,7 @@ Because `h#` elements are more than just stylistic, they're a semantic element p
 
 With this approach, the page remains nice and semantic and easily parsed by web crawlers for search engine indexing.
 
-### The Table of Contents
+## The Table of Contents
 
 To include a table of contents in a layout in Hugo, one simply adds this:
 
@@ -90,7 +90,7 @@ The table of contents nests our list **two whole levels** before we get to our `
 
 As you can see, we get two additional and unnecessary levels of nesting by default.
 
-### A Semantically Dirty Solution
+## A Semantically Dirty Solution
 
 The quickest way to resolve this is to do what actually I imagine end users will wind up doing, particularly non-technical users. That is to just start content titles at `h1` and suffer the invalid HTML warnings, and perhaps also the small hit to SEO.
 
@@ -104,7 +104,7 @@ That will clean up our table of contents, but I don't consider it an option. Hug
 
 There's got to be a better way.
 
-### A Better h1
+## A Better h1
 
 Okay, so maybe the problem is a little with my layout. We should take the opportunity to think a little about what an `h1` should be. As search engines are going to consider this the most important header in indexing a page, it clearly makes sense to give priority to the page title - at present, I'm favouring the site title.
 
@@ -124,7 +124,7 @@ But... a problem. My content titles now start at `h2`. One fewer levels of nesti
 
 So let's look at what we have to support.
 
-### Two Kinds of People
+## Two Kinds of People
 
 Let's assume that developers, designers and technical users like myself will follow best practices and start their content titles at `h2`:
 
@@ -144,7 +144,7 @@ Our second kind are end users, non-technical website owners for whom the first k
 
 Invalid, but they actually get the benefit of a prettier table of contents before I've even fixed the styling in a step to come.
 
-### h1 is like h2 or h1.5
+## h1 is like h2 or h1.5
 
 Quick note: Regardless of the theme or framework I'm using, the use of `h1` is still going to result in **BIG STYLING** of the text. A little quick fix for that (not tested) might be:
 
