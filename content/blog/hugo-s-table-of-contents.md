@@ -147,7 +147,7 @@ Invalid, but they actually get the benefit of a prettier table of contents befor
 
 Quick note: Regardless of the theme or framework I'm using, the use of `h1` is still going to result in **BIG STYLING** of the text. A little quick fix for that (not tested) might be:
 
-```sass
+```scss
 h1:not(:first-of-type) {
   @extend h2;
 }
@@ -196,7 +196,7 @@ We can't just be rid of the first nesting level, as our type 2 people will then 
 
 So first things first, let's get rid of the bullet points. They have got to go. We'll also get rid of indentation and... maybe bring it back afterwards based on certain conditions, but we might also consider denoting the nesting level using font-size instead.
 
-```sass
+```scss
 nav#TableOfContents {
   ul {
     padding:0;
@@ -238,7 +238,7 @@ That isn't in the spec. And neither is a `parent` selector, which we could alter
 
 What we can use is the [adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator "Mozilla Article on the Adjacent Sibling Combinator"). So to add padding to subsequent levels that are not children of an empty level, we'll do this:
 
-```sass
+```scss
 a + ul {
   padding-left:1em;
 }
@@ -250,7 +250,7 @@ I've worked on this problem long enough for today and I've reached something I'm
 
 Here's the final SCSS:
 
-```sass
+```scss
 nav#TableOfContents {
   ul {
     padding: 0;
