@@ -144,7 +144,7 @@ Our second kind are end users, non-technical website owners for whom the first k
 
 Invalid, but they actually get the benefit of a prettier table of contents before I've even fixed the styling in a step to come.
 
-### h1 is like h2
+### h1 is like h2 or h1.5
 
 Quick note: Regardless of the theme or framework I'm using, the use of `h1` is still going to result in **BIG STYLING** of the text. A little quick fix for that (not tested) might be:
 
