@@ -1,7 +1,6 @@
 +++
 authors = ["Thom Bruce"]
 date = "2019-01-21T00:00:00+00:00"
-draft = true
 images = []
 title = "Hugo's Table of Contents"
 
@@ -219,8 +218,66 @@ That removes the indentation, removes the bullets and reduces the font-size on t
 
 ###### Header 6
 
-## Missing CSS3 Selectors and a Potential Workaround
+## Adding Some Distinction
+
+The results of the styling above and the use of header levels down to level 6 is this:
+
+![Table of Contents with Header levels h2 to h6](/uploads/Screenshot 2019-01-21 at 16.31.29.png "Table of Contents with sized headers")
+
+That doesn't look so bad. Incremental header steps don't appear to change much in size, but there's a clear difference between `h2` and `h6`. And `h6` isn't so small as to be unreadable. `0.95em` was probably the right choice for a quick fix, but will likely see some modification per theme.
+
+The fact that incremental changes aren't great is in our favour too, as the discrepancy between `h1` and `h2` isn't great enough to be a problem for our two types of people.
+
+I want to re-add indentation now to add a little clarity, and I can't pull off the same trick here. If `h2` is our starting header, we want 0 padding on that. We can't just add the padding to our `ul` rule, as even the empty levels still exist. The result is that menu items starting at the second or third level of indentation produce this unexplained margin when we'd prefer the "top level" item to be flush with the page title and content by default.
+
+### Missing CSS3 Selectors and a Workaround
 
 One thing would be useful here which has been considered for the CSS spec before being abandoned: a `content` selector. If CSS had such a selector, we could use it to select the menu container based on the content it has, in our case determining that it lacks a link and is therefore an empty nesting level.
 
-That isn't in the spec. And neither is a `parent` selector.
+That isn't in the spec. And neither is a `parent` selector, which we could alternatively use to select only `li` elements that are the parent of an `a` element.
+
+What we can use is the [adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator "Mozilla Article on the Adjacent Sibling Combinator"). So to add padding to subsequent levels that are not children of an empty level, we'll do this:
+
+```sass
+a + ul {
+  padding-left:1em;
+}
+```
+
+## As Good as it Gets... For Now
+
+I've worked on this problem long enough for today and I've reached something I'm satisfied with. In the final result, I've commented out the font-size adjustment because I don't feel it was adding anything. I may revisit - perhaps a second level decrease followed by subsequent levels at the same size would be preferable.
+
+Here's the final SCSS:
+
+```sass
+nav#TableOfContents {
+  ul {
+    padding: 0;
+    list-style-type: none;
+    // font-size:0.95em;
+    a + ul {
+      padding-left:1em;
+    }
+  }
+}
+```
+
+Yep, that'll do.
+
+I would be eager to reintroduce list-style-type as decimals for the top level followed by roman numerals beneath. But I'm slightly concerned by the results of an experiment in doing that. It works, but we also wind up with the decimal numbers for empty levels as well. Although with the positioning choices I've made, you can't necessarily see them as they are covered by identical lower-level decimal numbers. But they are there... and I can't yet think of a solution for that.
+
+Regardless, here we have the finalised presentation (for now) of our table of contents:
+
+![Table of Contents Final with indentation and without bullets or numbers](/uploads/Screenshot 2019-01-21 at 17.37.04.png "Table of Contents Final")
+
+Looks... good enough. It will be modified by themes, and that's the next step for me - make sure it hasn't broken the display of any of my current themes.
+
+## Next Steps
+
+1. As mentioned, I'd like to get numerals working without them also being displayed for empty levels. If I can find a pure CSS solution to this, I'll implement it.
+2. At the moment, this will display by default if a page's content contains headers. We should add the potential to turn it off/on with two variables:
+   1. .Params.toc
+   2. .Site.Params.toc
+
+_Usually, I add HugoModo variables to a separate data file, but in this case the variable comes from Hugo's own docs so it seems more appropriate to follow the pattern they establish for it there._
