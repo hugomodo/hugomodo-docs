@@ -84,4 +84,8 @@ That's all automatic: nesting levels, anchor links, all of it. And in the exampl
   </li>
 ```
 
-The table of contents nests our list **two whole levels** before we get to our `h3` titles. The result is... ugly.
+The table of contents nests our list **two whole levels** before we get to our `h3` titles. The result is... ugly:
+
+![Ugly unordered list nesting with empty list items](/uploads/Screenshot 2019-01-21 at 14.02.33.png "Hugo's Table of Contents Ugly Nesting")
+
+As you can see, we get two additional and unnecessary levels of nesting by default.
