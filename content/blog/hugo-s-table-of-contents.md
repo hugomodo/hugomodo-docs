@@ -157,3 +157,28 @@ h1:not(:first-of-type) {
 ...maybe. Just thinking out loud here. This will (or should) at least get any `h1` but the first on the page to adopt the styling rules of a `h2` instead.
 
 But actually... We don't want it to be identical to an actual `h2`. We do still want to respect those users' nesting decisions. So probably better, rather than `@extend h2` to do something more like `font-size:2.25em;` or whatever styling choices we have to make to have the result stylistically appear to be a "h1.5", with size and weight somewhere between the main `h1` and an `h2`.
+
+## No Headers
+
+There's a little more to my template for a table of contents than just Hugo's `{{ .TableOfContents }}`. I've added it to an `aside` and given it its own title, a `h2` element. While the table of contents itself won't render unless there are headers, we also want it to be the case that the aside, header and whole component do not render if that's the case too.
+
+Fortunately, we can also use the template function as a conditional and check it like so:
+
+```html
+{{ if .TableOfContents }}
+  <aside>
+    <header>
+      <h2>Table of Contents</h2>
+    </header>
+    {{ .TableOfContents }}
+  </aside>
+{{ end }}
+```
+
+Easy peasy. Hugo's docs suggest a different conditional:
+
+```html
+{{ if and (gt .WordCount 400 ) (.Params.toc) }}
+```
+
+That would prevent rendering the block on articles shorter than 400 words and where a `toc` variable has been left unset or set to `false`. I'll come back to this consideration later, maybe combine my check with this one so that we ultimately don't render it for short content, content without headers or content where `toc` is false. For now, I'll stick with just the no-headers check.
