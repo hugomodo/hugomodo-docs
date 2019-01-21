@@ -182,3 +182,45 @@ Easy peasy. Hugo's docs suggest a different conditional:
 ```
 
 That would prevent rendering the block on articles shorter than 400 words and where a `toc` variable has been left unset or set to `false`. I'll come back to this consideration later, maybe combine my check with this one so that we ultimately don't render it for short content, content without headers or content where `toc` is false. For now, I'll stick with just the no-headers check.
+
+## The Current State of the ToC
+
+That second type of person, who'll be using `h1` through their content will already now get a table of contents without the empty levels of nesting.
+
+Meanwhile, I've changed most of the content files on this site to begin with `h2` and the result is...
+
+![Unordered list nesting starting at second level with empty list items](/uploads/Screenshot 2019-01-21 at 15.35.07.png "Hugo's Table of Contents Slightly Less Ugly Nesting")
+
+It's better than where we were. We still need to resolve that nesting issue, but it's only the one level now... _should_ be easier.
+
+We can't just be rid of the first nesting level, as our type 2 people will then be missing a level. So we'll have to style it in such a way as it remains present but is practically invisible.
+
+So first things first, let's get rid of the bullet points. They have got to go. We'll also get rid of indentation and... maybe bring it back afterwards based on certain conditions, but we might also consider denoting the nesting level using font-size instead.
+
+```sass
+nav#TableOfContents {
+  ul {
+    padding:0;
+    list-style-type: none;
+    font-size:0.95em;
+  }
+}
+```
+
+That removes the indentation, removes the bullets and reduces the font-size on the `ul` elements contents. At this point, it would be useful to have the whole range of header elements to play with to ensure that the font-size never gets too small. `em` adjusts the size relative to the containing element, so each subsequent level will be, with the above style rules, 5% smaller than its parent. Let's just throw down some dummy headers here:
+
+## Header 2
+
+### Header 3
+
+#### Header 4
+
+##### Header 5
+
+###### Header 6
+
+## Missing CSS3 Selectors and a Potential Workaround
+
+One thing would be useful here which has been considered for the CSS spec before being abandoned: a `content` selector. If CSS had such a selector, we could use it to select the menu container based on the content it has, in our case determining that it lacks a link and is therefore an empty nesting level.
+
+That isn't in the spec. And neither is a `parent` selector.
