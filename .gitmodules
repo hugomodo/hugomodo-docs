@@ -23,3 +23,6 @@
 [submodule "themes/hugomodo-cookie-consent"]
 	path = themes/hugomodo-cookie-consent
 	url = https://github.com/hugomodo/hugomodo-cookie-consent.git
+[submodule "themes/hugomodo-picnic"]
+	path = themes/hugomodo-picnic
+	url = https://github.com/hugomodo/hugomodo-picnic.git
