@@ -18,7 +18,7 @@ disqusShortname = "hugomodo"
 
 [Params]
   description = "A modular Hugo framework."
-  toc = true
+  include_toc = true
 
 [outputs]
   home = [

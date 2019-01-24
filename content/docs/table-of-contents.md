@@ -13,7 +13,7 @@ Add this to your site's `config.toml` file:
 
 ```toml
 [Params]
-  toc = true
+  include_toc = true
 ```
 
 ## Enable for a single page
@@ -21,7 +21,7 @@ Add this to your site's `config.toml` file:
 If you only want it enabled for a single page, add this to your page's frontmatter:
 
 ```toml
-toc = true
+include_toc = true
 ```
 
 ## Disable for a single page
@@ -29,5 +29,5 @@ toc = true
 To disable the table of contents for certain pages, add this to your page's frontmatter:
 
 ```toml
-toc = false
+include_toc = false
 ```

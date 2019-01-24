@@ -277,7 +277,7 @@ Looks... good enough. It will be modified by themes, and that's the next step fo
 
 1. As mentioned, I'd like to get numerals working without them also being displayed for empty levels. If I can find a pure CSS solution to this, I'll implement it.
 2. At the moment, this will display by default if a page's content contains headers. We should add the potential to turn it off/on with two variables:
-   1. .Params.toc
-   2. .Site.Params.toc
+   1. .Params.include_toc
+   2. .Site.Params.include_toc
 
 _Usually, I add HugoModo variables to a separate data file, but in this case the variable comes from Hugo's own docs so it seems more appropriate to follow the pattern they establish for it there._
