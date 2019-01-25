@@ -68,37 +68,37 @@ The `where` query here finds only those pages whose `Section` is blank. This is 
 
 The resultant set of sections and pages is the collection of those at the root of the Hugo content folder.
 
-```
+```text
 content/
-  blog/  <- Appears in menu
+  blog/                   <- Appears in menu
     my-first-blog-post.md
-  career/  <- Appears in menu
+  career/                 <- Appears in menu
     experience/
       my-first-job.md
     projects/
       my-project.md
     _index.md
-  about.md  <- Appears in menu
-  contact.md  <- Appears in menu
+  about.md                <- Appears in menu
+  contact.md              <- Appears in menu
 ```
 
 Contrast to Hugo's lazy menu:
 
-```
+```text
 content/
-  blog/	 <- Appears in menu
+  blog/	                  <- Appears in menu
     my-first-blog-post.md
   career/
-    experience/  <- Appears in menu
+    experience/           <- Appears in menu
       my-first-job.md
-    projects/  <- Appears in menu
+    projects/             <- Appears in menu
       my-project.md
     _index.md
   about.md
   contact.md
 ```
 
-With the basic setup, Hugo does not list our about or contact pages in the main menu. It also skips root sections, that contain no content files and shows deeper sections that do.
+With the basic setup, Hugo does not list our about or contact pages in the main menu. It also skips root sections that contain no content files and shows deeper sections that do.
 
 Hugo's menu is a great way to get started for really simple websites. But I think the HugoModo default presents a stronger starting point for complex site structures.
 
