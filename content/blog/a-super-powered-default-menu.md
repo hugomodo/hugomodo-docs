@@ -70,28 +70,28 @@ The resultant set of sections and pages is the collection of those at the root o
 
 ```
 content/
-  blog/							<- Appears in menu
+  blog/  <- Appears in menu
     my-first-blog-post.md
-  career/						<- Appears in menu
+  career/  <- Appears in menu
     experience/
       my-first-job.md
     projects/
       my-project.md
     _index.md
-  about.md						<- Appears in menu
-  contact.md					<- Appears in menu
+  about.md  <- Appears in menu
+  contact.md  <- Appears in menu
 ```
 
 Contrast to Hugo's lazy menu:
 
 ```
 content/
-  blog/							<- Appears in menu
+  blog/	 <- Appears in menu
     my-first-blog-post.md
   career/
-    experience/					<- Appears in menu
+    experience/  <- Appears in menu
       my-first-job.md
-    projects/					<- Appears in menu
+    projects/  <- Appears in menu
       my-project.md
     _index.md
   about.md
