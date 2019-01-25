@@ -1,7 +1,6 @@
 +++
 authors = ["Thom Bruce"]
 date = "2019-01-25T00:00:00+00:00"
-draft = true
 images = []
 title = "A Super-Powered Default Menu"
 
@@ -16,7 +15,7 @@ Hugo's [Section Menu for Lazy Bloggers](https://gohugo.io/templates/menu-templat
 
 Here's how I've implemented it in HugoModo:
 
-```html
+``` go-html-template
   <nav>
     <ul>
       {{ $currentPage := . }}
@@ -37,36 +36,11 @@ sectionPagesMenu = "main"
 
 That's it, you're all set!
 
-## Adding Menu Items
-
-With the above configured, adding menu items works just as it would with any other Hugo site.
-
-You can add menu items to your site config:
-
-```toml
-[menu]
-  [[menu.main]]
-    name = "about"
-    url = "/about/"
-```
-
-Or you can add them to your content frontmatter:
-
-```yaml
----
-menu: "main"
----
-```
-
-Instead of the lazy sections menu, the menu will now be populated by the items specified in either location (or indeed both).
-
-Consult Hugo's own [documentation](https://gohugo.io/content-management/menus/ "Hugo's Menu Documentation") for further possibilities.
-
 ## HugoModo's Super-Powered Default Menu
 
 Now, to the reason I had assumed I was in for a challenge with menus! I did this some time back when I wasn't as well-versed in Hugo's architecture as I am now., so at the time it took a lot of effort. And yet, it now looks so deceptively simple:
 
-```html
+``` go-html-template
   <nav>
     <ul>
       {{ $sections := .Site.Sections }}
@@ -86,7 +60,7 @@ You'll see there the standard markup for an unordered HTML menu, the elements us
 
 You'll notice my menu also includes a site's sections, via the `$sections` variable. But it also brings in some of a site's pages. Here's the all-important line:
 
-```html
+``` go-html-template
 {{ $pages := where .Site.RegularPages "Section" "" }}
 ```
 
@@ -94,28 +68,63 @@ The `where` query here finds only those pages whose `Section` is blank. This is 
 
 The resultant set of sections and pages is the collection of those at the root of the Hugo content folder.
 
-    content/
-      blog/							<- Appears in menu
-        my-first-blog-post.md
-      career/						<- Appears in menu
-        experience/
-          my-first-job.md
-        projects/
-          my-project.md
-        _index.md
-      about.md						<- Appears in menu
-      contact.md					<- Appears in menu
+```
+content/
+  blog/							<- Appears in menu
+    my-first-blog-post.md
+  career/						<- Appears in menu
+    experience/
+      my-first-job.md
+    projects/
+      my-project.md
+    _index.md
+  about.md						<- Appears in menu
+  contact.md					<- Appears in menu
+```
 
 Contrast to Hugo's lazy menu:
 
-    content/
-      blog/							<- Appears in menu
-        my-first-blog-post.md
-      career/
-        experience/					<- Appears in menu
-          my-first-job.md
-        projects/					<- Appears in menu
-          my-project.md
-        _index.md
-      about.md
-      contact.md
+```
+content/
+  blog/							<- Appears in menu
+    my-first-blog-post.md
+  career/
+    experience/					<- Appears in menu
+      my-first-job.md
+    projects/					<- Appears in menu
+      my-project.md
+    _index.md
+  about.md
+  contact.md
+```
+
+With the basic setup, Hugo does not list our about or contact pages in the main menu. It also skips root sections, that contain no content files and shows deeper sections that do.
+
+Hugo's menu is a great way to get started for really simple websites. But I think the HugoModo default presents a stronger starting point for complex site structures.
+
+Importantly, neither limits what you can do with menus. For even greater control, you can still manually configure menu entries in a couple of ways.
+
+## Adding Menu Items
+
+With either of the above configured, adding menu items works just as it would with any other Hugo site.
+
+You can add menu items to your site config:
+
+```toml
+[menu]
+  [[menu.main]]
+    name = "about"
+    url = "/about/"
+```
+
+Or you can add them to your content frontmatter:
+
+```yaml
+---
+menu: "main"
+---
+```
+
+Instead of the lazy sections menu or the HugoModo default, the menu will now be populated by the items specified in your site config or content frontmatter (or indeed both).
+
+Consult Hugo's own [documentation](https://gohugo.io/content-management/menus/ "Hugo's Menu Documentation") for further possibilities.
