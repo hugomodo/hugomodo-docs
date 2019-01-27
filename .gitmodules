@@ -26,3 +26,6 @@
 [submodule "themes/hugomodo-picnic"]
 	path = themes/hugomodo-picnic
 	url = https://github.com/hugomodo/hugomodo-picnic.git
+[submodule "themes/hugomodo-bootstrap"]
+	path = themes/hugomodo-bootstrap
+	url = https://github.com/hugomodo/hugomodo-bootstrap
