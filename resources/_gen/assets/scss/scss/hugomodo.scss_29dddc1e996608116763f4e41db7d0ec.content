@@ -1,1 +1,1 @@
-body>header>strong{display:block;font-size:2em;margin:0.67em 0}nav#TableOfContents ul{padding:0;list-style-type:none}nav#TableOfContents ul a+ul{padding-left:1em}
+header#hugoModule-siteHeader>strong{display:block;font-size:2em;margin:0.67em 0}nav#TableOfContents ul{padding:0;list-style-type:none}nav#TableOfContents ul a+ul{padding-left:1em}
