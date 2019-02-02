@@ -24,6 +24,7 @@ pages:
 - content/docs/build-with-forestry.md
 - content/blog/image-processing-and-svgs.md
 - content/blog/static-site-search-and-gitlab-pages.md
+- content/blog/on-hugo-s-coattails.md
 - content/blog/hugo-s-author-and-authors.md
 - content/blog/a-super-powered-default-menu.md
 - content/blog/forestry-compatible.md
