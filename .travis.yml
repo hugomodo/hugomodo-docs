@@ -1,15 +1,8 @@
-dist: xenial
-
-addons:
-  snaps:
-  - hugo
-
+language: minimal
 install:
 - rm -rf public || exit 0
-
 script:
-- hugo
-
+- bin/hugo
 deploy:
   provider: pages
   skip-cleanup: true
