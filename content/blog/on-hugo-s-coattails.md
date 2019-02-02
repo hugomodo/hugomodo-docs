@@ -23,7 +23,7 @@ In other news, I've started to introduce versioning to the HugoModo project with
 
 Semver doesn't matter as much to a project like HugoModo, and I missed the discussion about semver above before putting out this release... so I'm undecided as to whether I'll adopt full and proper semver with future releases. It doesn't matter, because HugoModo is not a module and so it isn't something that will be pulled into other software projects. It is still _just a theme_ for Hugo. But I expect I'll adopt the practise, just to better mirror Hugo releases.
 
-Speaking of which, HugoModo will continue to ride Hugo's coattails, so to speak, up to the first major release of Hugo v1.0.0. It doesn't seem right to me that Hugo jump ahead and declare itself a major, stable release when Hugo - which it of course depends so greatly on - has not.
+Speaking of which, HugoModo will continue to ride Hugo's coattails, so to speak, up to the first major release of Hugo v1.0.0. It doesn't seem right to me that HugoModo jump ahead and declare itself a major, stable release when Hugo - which it of course depends so greatly on - has not.
 
 But why use semantic versioning at all? HugoModo is _just a theme!_
 
