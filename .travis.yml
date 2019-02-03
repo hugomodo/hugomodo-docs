@@ -1,8 +1,12 @@
-language: minimal
+dist: xenial
+addons:
+  snaps:
+  - name: hugo
+    channel: extended
 install:
 - rm -rf public || exit 0
 script:
-- bin/hugo
+- hugo
 deploy:
   provider: pages
   skip-cleanup: true

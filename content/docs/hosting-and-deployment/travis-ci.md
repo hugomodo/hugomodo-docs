@@ -17,6 +17,18 @@ script:
 - hugo
 ```
 
+```yaml
+dist: xenial
+
+addons:
+  snaps:
+  - name: hugo
+    channel: extended
+
+script:
+- hugo
+```
+
 ### Cons
 
 #### No Asset Pipeline???
