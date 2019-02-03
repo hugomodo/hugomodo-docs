@@ -17,6 +17,8 @@ script:
 - hugo
 ```
 
+Is the above faster than below? Almost certainly.
+
 ```yaml
 dist: xenial
 
@@ -42,6 +44,14 @@ language: minimal
 
 script:
 - bin/hugo
+```
+
+This appears to cut my build times on Travis CI in half... probably because we only fetch resources from one source: the repo.
+
+Can't seem to get the extended binary to execute for Linux this way, so I opt to use MacOS instead:
+
+```yaml
+os: osx
 ```
 
 ### Cons
