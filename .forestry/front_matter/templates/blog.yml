@@ -26,6 +26,7 @@ pages:
 - content/blog/static-site-search-and-gitlab-pages.md
 - content/blog/on-hugo-s-coattails.md
 - content/blog/hugo-s-author-and-authors.md
+- content/blog/considerations-for-standalone-theme-releases.md
 - content/blog/a-super-powered-default-menu.md
 - content/blog/forestry-compatible.md
 - content/blog/an-opinionated-approach-to-markup.md
