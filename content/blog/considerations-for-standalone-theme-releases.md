@@ -68,3 +68,29 @@ Since I won't rollback the resource extendibility, this method is now a no-go.
 ## Copy Theme Files
 
 This is the other option, and while it isn't ideal I think it's going to be the only way to have this work.
+
+### TODO
+
+https://superuser.com/a/1171400
+
+```bash
+cp -rn /hugomodo /hugomodo-best-motherfucking-website
+```
+
+That's probably what we want to do. `-r` is recursive, `-n` is no-clobber which will respect destination files if they exist.
+
+But... `-n`... What if the base theme has new files added, or old ones removed?
+
+Good question! I think we're going to have to rebuild from `@master` every time. So... how do we get standalone to match master, then copy the files?
+
+Probably going to have to do a `git reset` against master: https://stackoverflow.com/a/36321787/2225649 We'll lose history... but them's the breaks, I guess. It is the simplest solution... and since it's _strictly_ a release branch, we're not that concerned with the history anyway.
+
+So...
+
+```bash
+git checkout standalone
+git reset master --hard
+cp -rn ../hugomodo .
+git commit -A -m "some commit message"
+git push origin standalone --force # or --force-with-lease (but I have to consider the implications)
+```
