@@ -31,6 +31,8 @@ script:
 - hugo
 ```
 
+This is now my preferred approach.
+
 ### Cons
 
 #### No Asset Pipeline???
