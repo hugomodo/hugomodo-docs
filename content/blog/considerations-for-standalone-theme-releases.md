@@ -87,6 +87,8 @@ Probably going to have to do a `git reset` against master: https://stackoverflow
 
 So...
 
+Noting that we will also need to remove the config.toml (which should, I suppose, only ever reference the parent theme... if it doesn't, we'll have to overwrite after the reset rather than remove - more complicated)...
+
 ```bash
 git checkout standalone
 git reset master --hard
