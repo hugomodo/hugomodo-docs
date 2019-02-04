@@ -89,9 +89,12 @@ So...
 
 Noting that we will also need to remove the config.toml (which should, I suppose, only ever reference the parent theme... if it doesn't, we'll have to overwrite after the reset rather than remove - more complicated)...
 
+_Actually, base config.toml turns comments on by default. But if we go with the strict order below, we will always inherit it from the parent standalone or base theme. Provided that no theme adjusts any further configuration settings there, it'll work out fine. If and when they do, this will need to change._
+
 ```bash
 git checkout standalone
 git reset master --hard
+rm -f config.toml
 cp -rn ../hugomodo .
 git commit -A -m "some commit message"
 git push origin standalone --force # or --force-with-lease (but I have to consider the implications)
