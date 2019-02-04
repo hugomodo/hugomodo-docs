@@ -74,7 +74,7 @@ This is the other option, and while it isn't ideal I think it's going to be the 
 https://superuser.com/a/1171400
 
 ```bash
-cp -rn /hugomodo /hugomodo-best-motherfucking-website
+cp -rn /hugomodo/. /hugomodo-best-motherfucking-website
 ```
 
 That's probably what we want to do. `-r` is recursive, `-n` is no-clobber which will respect destination files if they exist.
@@ -92,10 +92,10 @@ Noting that we will also need to remove the config.toml (which should, I suppose
 _Actually, base config.toml turns comments on by default. But if we go with the strict order below, we will always inherit it from the parent standalone or base theme. Provided that no theme adjusts any further configuration settings there, it'll work out fine. If and when they do, this will need to change._
 
 ```bash
-git checkout standalone
-git reset master --hard
+git checkout -b standalone
 rm -f config.toml
-cp -rn ../hugomodo .
-git commit -A -m "some commit message"
-git push origin standalone --force # or --force-with-lease (but I have to consider the implications)
+cp -rn ../hugomodo/. . || true
+git add -A
+git commit -m "rebuild from master"
+git push -u origin standalone --force
 ```
