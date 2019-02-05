@@ -1,7 +1,6 @@
 +++
 authors = ["Thom Bruce"]
 date = "2019-02-04T00:00:00+00:00"
-draft = true
 images = []
 title = "Considerations for Standalone Theme Releases"
 
@@ -69,33 +68,62 @@ Since I won't rollback the resource extendibility, this method is now a no-go.
 
 This is the other option, and while it isn't ideal I think it's going to be the only way to have this work.
 
-### TODO
-
-https://superuser.com/a/1171400
+The idea is to create a `standalone` branch which reflects the current state of the main developments on `master`, then to copy files from the parent theme respecting and not replacing any that already exist in the child theme. This can be achieved relatively easily, like so:
 
 ```bash
-cp -rn /hugomodo/. /hugomodo-best-motherfucking-website
+cp -rn hugomodo hugomodo-best-motherfucking-website
 ```
 
-That's probably what we want to do. `-r` is recursive, `-n` is no-clobber which will respect destination files if they exist.
+The `r` and `n` flags tell the copy command to perform the copy recursively - meaning all files in all subdirectories - and to "not clobber" the destination files - meaning don't replace anything if it already exists. This way, the child theme will gain all of the files present in the parent but any overwrites will be respected and remain untouched.
 
-But... `-n`... What if the base theme has new files added, or old ones removed?
-
-Good question! I think we're going to have to rebuild from `@master` every time. So... how do we get standalone to match master, then copy the files?
-
-Probably going to have to do a `git reset` against master: https://stackoverflow.com/a/36321787/2225649 We'll lose history... but them's the breaks, I guess. It is the simplest solution... and since it's _strictly_ a release branch, we're not that concerned with the history anyway.
-
-So...
-
-Noting that we will also need to remove the config.toml (which should, I suppose, only ever reference the parent theme... if it doesn't, we'll have to overwrite after the reset rather than remove - more complicated)...
-
-_Actually, base config.toml turns comments on by default. But if we go with the strict order below, we will always inherit it from the parent standalone or base theme. Provided that no theme adjusts any further configuration settings there, it'll work out fine. If and when they do, this will need to change._
+The full process then is to checkout the `standalone` branch, reset it to the state of `master`, and copy the parent theme's files:
 
 ```bash
-git checkout -b standalone
-rm -f config.toml
-cp -rn ../hugomodo/. . || true
+git checkout standalone
+git reset master --hard
+cp -rn ../hugomodo/. .
+```
+
+As you can see, I've slightly modified the `cp` command so it can be performed from the destination directory. `../hugomodo/.` means _look upwards one directory level for the hugomodo directory, and copy its root contents_. `.` doesn't really mean _root directory_, but for our purposes it's a fair explanation. The final `.` on its own means _the current directory_. In plain English, _go up one directory level, find hugomodo, copy its root contents into the current directory; do so recursively, respecting any files which already exist_. Or _copy recursive no-clobber hugomodo into this directory_.
+
+Following this, the state of the `standalone` branch will be a match to the `master` development branch _plus_ the contents of the parent theme. Enough then to _stand alone_. We commit the changes and push to GitHub:
+
+```bash
 git add -A
-git commit -m "rebuild from master"
-git push -u origin standalone --force
+git commit -m "rebuild standalone from master"
+git push origin standalone --force
 ```
+
+We have to force push here, because of our earlier `reset` - it destroys the branch history.
+
+With that, I... _almost_ have a perfect `standalone` branch. There's just one more thing. After reseting to the state of `master` but before copying the parent files, I have to add:
+
+```bash
+rm -f config.toml
+```
+
+This `rm` _removes_ the file `config.toml`, and does so _forcefully_. We need to remove the child theme config file, because it's what tells Hugo to _also_ look for a parent theme, which we won't be using with this setup. We also need to adopt the config of the parent theme, to ensure that the default configuration settings are inherited.
+
+And with that, we have a `standalone` branch. I've automated the entire task with a [Travis CI](https://travis-ci.com/ "Travis CI Continuous Integration") job, the full configuration for which is this:
+
+```yaml
+- stage: standalone
+  script:
+    - git checkout -B standalone
+    - git reset master --hard
+    - rm -f config.toml
+    - cp -rn ../hugomodo/. . || true
+    - git add -A
+    - git commit -m "rebuild from master"
+    - git push -u origin standalone --force
+```
+
+`git checkout -B` does a forceful branching from master into our target branch, `standalone`. Strictly, I think the `-B` flag renders the reset redundant, since it's a forceful rebranch of the state of `master`, but I've left the reset in for good measure. I added the `-B` so as to not assume the prior existence of the `standalone` branch - if it exists, that's fine, but if not this will make sure that it does. For that reason, I also have to say `git push -u`. The `-u` tells git to consider this destination the authority for this branch, which given that it's a new one (`-B`) we don't yet have; it's shorthand for `--set-upstream`.
+
+There's only one change here I don't understand, and that's this: `cp -rn ../hugomodo/. . || true`. For some reason, the `cp` command was returning an error code and yet... _it was/is working_. I have no idea why at this time, so `|| true` is a hack that says _or return true_ or _if what comes before this errors or fails, return true instead_. The line doesn't fail, but it returns a code like it does, hence the need for that.
+
+Anyway, hey! That's `standalone` branches **done!**
+
+HugoModo Best Motherfucking Website now comes in a standalone flavour that doesn't require the base theme to work. Much easier installs for those who don't need the bleeding edge versions.
+
+I'll be documenting the much improved installation process soon.
