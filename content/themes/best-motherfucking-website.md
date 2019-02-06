@@ -46,6 +46,29 @@ git submodule add -b 0.1.0 https://github.com/hugomodo/hugomodo-best-motherfucki
 
 _Note that you can also use `-b master` or forego the flag entirely to get the very latest edge version of each._
 
+## Updating
+
+With _HugoModo Best Motherfucking Website_ installed as a Git submodule, it's easy to update to the latest version of the branch you're on. From your site's root directory, simply run:
+
+```text
+git -C themes/hugomodo-best-motherfucking-website pull
+```
+
+If you're on a versioned branch, and want to switch to a different version, run these commands substituting `0.1.0-standalone` for the new branch you want to target:
+
+```text
+git -C themes/hugomodo-best-motherfucking-website checkout 0.1.0-standalone
+git config -f .gitmodules submodule.themes/hugomodo-best-motherfucking-website.branch 0.1.0-standalone
+```
+
+### Updating All Themes and Extensions
+
+If you have multiple themes or extensions installed, you can update them all with one command like so:
+
+```text
+git submodule foreach git pull
+```
+
 ## Support on Beerpay
 Hey dude! Help me out for a couple of :beers:!
 
