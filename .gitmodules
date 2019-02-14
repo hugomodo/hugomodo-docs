@@ -29,3 +29,6 @@
 [submodule "themes/hugomodo-bootstrap"]
 	path = themes/hugomodo-bootstrap
 	url = https://github.com/hugomodo/hugomodo-bootstrap
+[submodule "themes/hugomodo-foundation"]
+	path = themes/hugomodo-foundation
+	url = https://github.com/hugomodo/hugomodo-foundation
