@@ -1,7 +1,6 @@
 +++
 authors = ["Thom Bruce"]
 date = "2019-02-16T00:00:00+00:00"
-draft = true
 images = []
 title = "Choosing a Style Framework"
 
@@ -53,3 +52,13 @@ It's a little more work, but ultimately a more familiar and customisable experie
 To focus on it, I'm dropping support for all themes other than _Best Motherfucking Website_ and _Bootstrap_. The former is tremendously minimalist but beautiful, and requires little reconfiguration. Bootstrap will require a little more work, hence the lack of time for others... and probably breaking changes for them for now. _That said, the Milligram and Picnic themes should continue to work in their current (incomplete) state with HugoModo v0.1.1 for the time being._
 
 ## I still think a minimalist CSS framework with advanced functionality is possible
+
+This puts a bit of an obstacle in front of something I've wanted to do for a long time. I've long thought about developing a CSS framework that doesn't require all of these additional markup considerations - ideally one which can duplicate all of the functionality of, say, Bootstrap or Foundation with purely the semantic markup of HTML5.
+
+I'll need to look more into Picnic, which I think comes pretty close to this ideal. And in fact, I'll probably revisit the Picnic HugoModo theme next after finishing up the Bootstrap theme.
+
+It may be a pipe dream. It might be unachievable - indeed, attempting it with these sophisticated frameworks at this time has proven it can't be done with them. But I think it's well-worth exploring, and I as yet have no reason to believe it can't be done with either Flexbox or CSS Grid Layouts, the former of which is highly supported in modern browsers, the latter... only quite reasonably so but ready for consideration, I think.
+
+So that's a future consideration. And to explore it, HugoModo having a really clean and purely semantic base markup system will be ideal.
+
+But for now, I'll work with a known and long-trusted approach in Bootstrap, and hope to release an initial theme version soon.
