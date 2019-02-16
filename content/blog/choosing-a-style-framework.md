@@ -37,3 +37,19 @@ It's the first blockade to a universal approach to markup, but it's a critical o
 Thus far, no other styling div I'd added had interrupted the overarching document structure, but this one would. And I can't have that; HugoModo is still, and should remain, a really clean and semantic HTML framework.
 
 ## Out with the new
+
+So here's what's gonna happen...
+
+Rather than attempt to make HugoModo a one-size-fits-all framework with universal markup that can be styled by any framework with CSS alone... I'm gonna return it to its roots.
+
+HugoModo will return to purely the necessary, purely the semantic HTML that makes it great for SEO and accessibility.
+
+Going forwards, the plan will be to make HugoModo's component partials as well-organised and modular as possible, so that styling frameworks have the minimum possible footprint when overwriting files.
+
+But that's what they'll do... Styling frameworks will now overwrite partials, to provide whatever specific markup they need. The required changes are too flow-breaking to introduce to the base, so this is now an essential step.
+
+It's a little more work, but ultimately a more familiar and customisable experience.
+
+To focus on it, I'm dropping support for all themes other than _Best Motherfucking Website_ and _Bootstrap_. The former is tremendously minimalist but beautiful, and requires little reconfiguration. Bootstrap will require a little more work, hence the lack of time for others... and probably breaking changes for them for now. _That said, the Milligram and Picnic themes should continue to work in their current (incomplete) state with HugoModo v0.1.1 for the time being._
+
+## I still think a minimalist CSS framework with advanced functionality is possible
