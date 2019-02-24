@@ -1,7 +1,6 @@
 +++
 authors = ["Thom Bruce"]
 date = "2019-02-24T00:00:00+00:00"
-draft = true
 images = []
 title = "Rethinking baseof and Partials with HugoModo Blocks"
 
@@ -20,7 +19,7 @@ The Hugo `baseof.html` file sits in the `_default` directory of layouts, and act
 
 At present, HugoModo's baseof file looks like this:
 
-```html
+``` go-html-template
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}" itemscope itemtype="http://schema.org/WebPage">
   {{- partial "head.html" . -}}
@@ -46,7 +45,7 @@ We do, yes, still want to provide a default that sticks with the norm and is hig
 
 Preferably, then, header and footer would be moved into the _main_ layouts, and our baseof would look a little more like this:
 
-```html
+``` go-html-template
 <!DOCTYPE html>
 <html>
   {{- partial "head.html" . -}}
@@ -100,7 +99,7 @@ Because of the major drawback to approach two, even though it did have more goin
 
 So a tentative example of a new default `baseof` would look like this:
 
-```html
+``` go-html-template
 <!DOCTYPE html>
 <html>
   {{- partial "head.html" . -}}
@@ -108,7 +107,7 @@ So a tentative example of a new default `baseof` would look like this:
     {{- block "header" . }}{{- end }}
 
     {{- block "main" . }}{{- end }}
-    
+
     {{- block "footer" . }}{{- end }}
 
     {{- partial "foot.html" . -}}
