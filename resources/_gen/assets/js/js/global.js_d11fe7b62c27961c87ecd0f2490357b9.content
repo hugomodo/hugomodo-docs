@@ -1,7 +1,8 @@
-"use strict";var documentElement=document.getElementsByTagName("html")[0],clickEvent="ontouchstart"in window?"touchend":"click",classMethods=["remove","add"];function someControl(id,textArr,className){var el=document.getElementsByTagName("html")[0];var acbox=document.getElementById(id),textNode=acbox.firstChild,toggled=false;acbox.addEventListener(clickEvent,function(){var selector=Number((toggled=!toggled));textNode.data=textArr[selector];el.classList[classMethods[selector]](className);},false);}
+"use strict";var documentElement=document.getElementsByTagName("html")[0],clickEvent="ontouchstart"in window?"touchend":"click",classMethods=["remove","add"];function someControl(id,textArr,className){checkCookie(id,textArr,className);var el=document.getElementsByTagName("html")[0];var acbox=document.getElementById(id),textNode=acbox.firstChild,toggled=getCookie(id)==="true";acbox.addEventListener(clickEvent,function(){setCookie(id,!toggled,365);var selector=Number((toggled=!toggled));textNode.data=textArr[selector];el.classList[classMethods[selector]](className);},false);}
 function addContrastControl(){someControl("contrast",["Add more contrast","Remove additional contrast"],"contrast");}
 function addInvertedControl(){someControl("invmode",["Inverted mode","Normal mode"],"inverted");}
-addContrastControl();addInvertedControl();/*!
+addContrastControl();addInvertedControl();function checkCookie(cname,textArr,className){var status=getCookie(cname);if(getCookie(cname)==="true"){var el=document.getElementsByTagName("html")[0];var acbox=document.getElementById(cname),textNode=acbox.firstChild
+textNode.data=textArr[1];el.classList[classMethods[1]](className);}}/*!
 * jQuery JavaScript Library v3.3.1
 * https://jquery.com/
 *
@@ -13,7 +14,8 @@ addContrastControl();addInvertedControl();/*!
 * https://jquery.org/license
 *
 * Date: 2018-01-20T17:24Z
-*/(function(global,factory){"use strict";if(typeof module==="object"&&typeof module.exports==="object"){module.exports=global.document?factory(global,true):function(w){if(!w.document){throw new Error("jQuery requires a window with a document");}
+*/
+(function(global,factory){"use strict";if(typeof module==="object"&&typeof module.exports==="object"){module.exports=global.document?factory(global,true):function(w){if(!w.document){throw new Error("jQuery requires a window with a document");}
 return factory(w);};}else{factory(global);}})(typeof window!=="undefined"?window:this,function(window,noGlobal){"use strict";var arr=[];var document=window.document;var getProto=Object.getPrototypeOf;var slice=arr.slice;var concat=arr.concat;var push=arr.push;var indexOf=arr.indexOf;var class2type={};var toString=class2type.toString;var hasOwn=class2type.hasOwnProperty;var fnToString=hasOwn.toString;var ObjectFunctionString=fnToString.call(Object);var support={};var isFunction=function isFunction(obj){return typeof obj==="function"&&typeof obj.nodeType!=="number";};var isWindow=function isWindow(obj){return obj!=null&&obj===obj.window;};var preservedScriptAttributes={type:true,src:true,noModule:true};function DOMEval(code,doc,node){doc=doc||document;var i,script=doc.createElement("script");script.text=code;if(node){for(i in preservedScriptAttributes){if(node[i]){script[i]=node[i];}}}
 doc.head.appendChild(script).parentNode.removeChild(script);}
 function toType(obj){if(obj==null){return obj+"";}
